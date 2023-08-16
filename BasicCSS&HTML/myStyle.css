@@ -1,0 +1,47 @@
+/* style will be applied to whole body*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+h1 {
+    color: rgb(151, 49, 151);
+}
+.points{
+    color: aqua;
+}
+/*Style usually applied by classes as above and not id's. id's with '#' classes with '.'*/
+#point-2{
+    color: red; 
+}
+.container {
+ color: brown;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-style: italic;
+ font-weight: bold;
+ background-color: rgb(166, 100, 53);
+ border: 10px solid rgb(114, 114, 43);
+ padding: 10px 10px;
+ margin: 0px;
+ text-align: center;
+ 
+}
+
+.block {
+ height: 1000px;
+ margin: 0;
+}
+.red {
+  height: 100px;  
+  background-color: red;
+}
+.blue {
+  height: 100px; 
+  background-color: blue;
+}
+.green {
+  height: 100px; 
+  background-color: green;
+}

@@ -1,0 +1,56 @@
+.box {
+margin-top: 50px;
+width: 300px;
+border: 5px dashed blue;
+}
+
+.stripe {
+box-sizing: border-box;
+width: 200px;
+height: 70px;
+}
+
+.purple {
+background-color: purple;
+}
+
+.red {
+    /* position 'relative' will determine position only of this element from his starting points and will not change position of elements around it( unlike using margings or padding. ) */
+position: relative;
+left:20px;
+top:20px;
+background-color: red;
+}
+/* position absolute is defined not from starting position of elent but on page itself 
+as in this example with top =0
+element will appear at top of the page and not in its starting position. 
+something to note : if parent element have position other than 'static' position absolute will not work*/
+.green {
+position: absolute;
+top: 0;
+background-color: yellowgreen;
+}
+
+/* position 'fixed' is based on position of its first parent. if non of the parent elements have position it will get its starting point from page it self.
+fixed position is used when you want to scroll the page you want that element always to stay in focus as you scroll down. it makes elemennt sticky. */
+  
+ .blue {
+ position: fixed;
+ bottom: 20px;
+ background-color: yellowgreen;
+} 
+    
+
+/* 'fixed' and 'absolute' positions are stretching only with content inside or if they have with (so their default is - inline block elememt)
+if you want to stretch the element you have to add 'width 100%' or add 'left' and 'right'. 'absolute' will stretch to size of its parent and 'fixed' to end of the page. */
+
+
+/* position sticky acts as regular until page is scrolled down then it will stick to page.
+when page is scrolled then it will act like fixed element. easier to use without extra steps adding */
+
+.yellow {
+    position: sticky;
+    top:10px;
+    left:10px;
+
+}

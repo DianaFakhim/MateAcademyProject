@@ -1,0 +1,302 @@
+BEM Methodology
+BEM (Block, Element, Modifier) is a web development methodology. It is based on the idea of dividing the user interface (UI) into independent and reusable components. It simplifies the development of pages of any complexity.
+
+Main Concepts
+Block
+Block is an independent and self-contained part of the UI. It can be reused anywhere without any changes. It is represented by a meaningful CSS class that should explain the goal of a block:
+
+<nav class="main-navigation">
+  Some content
+</nav>
+
+Element
+Element is a part of a block that cannot be used outside of it. Its class must follow the block-name__element-name pattern. For example:
+
+<nav class="main-navigation">
+  <ul class="main-navigation__list">
+    <li class="main-navigation__item">
+      ...
+    </li>
+    
+    ...
+  </ul>
+  
+  <input class="main-navigation__search">
+</nav>
+
+Modifier
+Modifier is a CSS class representing a state of a block or an element. It is always used with the main class and should follow one of the next two patterns: block-or-element-name--modifier-name or block-or-element-name--modifier-name--modifier-value. We will use -- as a separator, but there are some other BEM naming conventions. For example:
+
+<nav class="main-navigation main-navigation--theme--dark main-navigation--mobile">
+  <ul class="main-navigation__list">
+    <li class="main-navigation__item main-navigation__item--active">
+      ...
+    </li>
+    
+    ...
+  </ul>
+  
+  <input class="main-navigation__search main-navigation__search--mode--compact">
+</nav>
+
+Typical BEM Mistakes
+HTML
+An Element of Another Element
+An element belongs to a block, not to another element. That's why the prefix — is the name of a block, not the name of another element.
+
+<div class="example">
+  <ul class="example__list">
+
+    <!-- Wrong -->
+    <li class="example__list__item">...</li>
+    
+    <!-- Correct -->
+    <li class="example__item">...</li>
+
+  </ul>
+</div>
+
+Using an Element Without Its Block's Prefix
+The name of an element MUST contain the name of its block.
+
+<!-- Wrong -->
+<ul class="menu">
+  <li class="item">
+    Only if it's not a standalone block
+  </li>
+</ul>
+
+<!-- Correct -->
+<ul class="menu">
+  <li class="menu__item">...</li>
+</ul>
+
+Using a Modifier Instead of an Element
+Double underscore is used to separate the name of a block and the name of an element.
+
+<!-- Wrong -->
+<ul class="menu">
+  <li class="menu--item">...</li>
+  <li class="menu_item">...</li>
+</ul>
+
+<!-- Correct -->
+<ul class="menu">
+  <li class="menu__item">...</li>
+  <li class="menu__item">...</li>
+</ul>
+
+Using a Modifier Without the Belonging Class
+A modifier must not be used without the class it modifies.
+
+<!-- Wrong -->
+<ul class="menu--mobile">
+  <li class="menu__item--active">...</li>
+</ul>
+
+<!-- Correct -->
+<ul class="menu menu--mobile">
+  <li class="menu__item menu__item--active">...</li>
+</ul>
+
+Using a Block Modifier on an Element
+A block modifier must not be used on the block's elements.
+
+<!-- Wrong -->
+<ul class="menu">
+  <li class="menu__item menu--active">...</li>
+</ul>
+
+<!-- Correct -->
+<ul class="menu">
+  <li class="menu__item menu__item--active">...</li>
+</ul>
+
+Using a Modifier Without a Prefix
+An element modifier must be preceded by the name of the element, the same is true for block modifiers.
+
+<!-- Wrong -->
+<nav class="nav fixed">
+  <a class="nav__link active" href="#">
+    Wrong
+  </a>
+</nav>
+
+<!-- Correct -->
+<nav class="nav nav--fixed">
+  <a class="nav__link nav__link--active" href="#">
+    Correct
+  </a>
+</nav>
+
+Using an Element Inside Another Block
+An element of the parent block must not be used inside a child block.
+
+<div class="parent">
+  <!-- Wrong -->
+  <div class="child">
+    <p class="parent__element">Text</p>
+  </div>
+  
+  <!-- Correct -->
+  <div class="child parent__element">
+    <p class="child__element">Text</p>
+  </div>
+</div>
+
+Using an Element Outside a Block
+An element must not be used outside the block it belongs to.
+
+<!-- Wrong -->
+<div class="block">
+  Content
+</div>
+
+<p class="block__element">Text</p>
+
+<!-- Correct -->
+<div class="block">
+  <p class="block__element">Text</p>
+</div>
+
+Using Different Naming Conventions Within One Project
+Using different naming conventions within one project is not allowed.
+
+<!-- Wrong -->
+<div class="ParentBlock ParentBlock_mobile">
+  <div class="child-block child-block--active ParentBlock-element"></div>
+</div>
+
+<!-- Correct -->
+<div class="ParentBlock ParentBlock_mobile">
+  <div class="ChildBlock ChildBlock--active ParentBlock-element"></div>
+</div>
+
+<!-- Correct -->
+<div class="parent-block parent-block--mobile">
+  <div class="child-block child-block--active parent-block__element"></div>
+</div>
+
+CSS
+Styling an Element in the Context of Another Element
+Styles of one element must not depend on its relations with other elements.
+
+<ul class="nav__list">
+  <li class="nav__item"></li>
+</ul>
+
+/* Wrong */
+.nav__list .nav__item {
+  padding: 0;
+}
+
+/* Correct */
+.nav__item {
+  padding: 0;
+}
+
+Styling an Element Depending on its Context
+Styles of an element must not depend on the state of another element. BUT styling can depend on the state of the block.
+
+<ul class="nav__list nav__list--active">
+  <li class="nav__item"></li>
+</ul>
+
+/* Wrong */
+.nav__list--active .nav__item {
+  padding: 0;
+}
+
+/* Correct */
+.nav--active .nav__link { /* Can be styled based on the state of the block */
+  padding: 0;
+}
+
+.nav:hover .nav__link {
+  padding: 0;
+}
+
+<nav class="nav nav--active">
+  <a class="nav__link" href="#">1</a>
+</nav>
+
+Increasing an Element Specificity
+You must not add the block selector to an element selector not to increase specificity. Element must always be placed inside its block in HTML.
+
+<nav class="nav">
+  <ul class="nav__list">...</ul>
+</nav>
+
+/* Wrong */
+.nav .nav__list {
+  padding: 0;
+}
+
+/* Correct */
+.nav__list {
+  padding: 0;
+}
+
+Increasing Modifier Specificity
+You must not use the main class together with a modifier in a selector not to increase specificity. Modifier must always be added in addition to the main class in CSS in HTML.
+
+/* Wrong */
+.burger-menu.burger-menu--active {
+  background-color: transparent;
+}
+
+/* Correct */
+.burger-menu--active {
+  background-color: transparent;
+}
+
+Styling a Block in the Context of Another Block
+The styles of a block must not depend on where it is located.
+
+<div class="parent">
+  <div class="child"></div>
+</div>
+
+/* Wrong */
+.parent .child {
+  margin-bottom: 10px;
+}
+
+/* Correct */
+.parent__element { /* use mix */
+  margin-bottom: 10px;
+}
+
+<div class="parent">
+  <div class="child parent__element"></div>
+</div>
+
+Setting the Block's External Geometry or Positioning
+A block must not be positioned or depend on other blocks.
+
+<div class="parent">
+  <div class="child">...</div>
+</div>
+
+/* Wrong */
+.child {
+  position: absolute;
+  top: 0;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Correct */
+.parent__element { /* use mix */
+  position: absolute;
+  top: 0;
+  margin: 10px;
+}
+
+.child {
+  padding: 10px;
+}
+
+<div class="parent">
+  <div class="child parent__element">...</div>
+</div>

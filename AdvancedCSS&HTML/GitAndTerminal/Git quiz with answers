@@ -1,0 +1,48 @@
+Git quiz with answers:
+
+
+"RESET is about updating your branch, moving the tip in order to add or remove commits from the branch. This operation changes the commit history."
+
+"RESTORE is about restoring files in the working tree from either the index or another commit. This command does not update your branch. The command can also be used to restore files in the index from another commit."
+
+"REVERT is about making a new commit that reverts the changes made by other commits."
+
+1. How to fully remove committed changes without making a new commit?
+
+   answer: 'git reset 4sg566fg --hard'
+
+2. How to move the branch 2 commits back in history?
+
+   answer: git reset HEAD^^
+
+3. How to create a new commit cancelling changes from a certain commit?
+
+   answer: git revert g537dshg
+
+
+4. How to cancel changes not prepared(not staged) for commit in file ?
+
+   answer: git restore file_name
+
+
+5. How to switch between commits without history change?
+
+   answer: git checkout fh575sh
+
+6. How to rebuild develop branch based on main? 
+
+   answer: git rebase main
+
+7. How to update last commit?
+
+   answer: git commit --amend (or git commit -am --amend) 
+
+8. How to remove changes from staged but keep in files?
+
+   answers: git restore --staged file_name
+
+9. How to add changes rom develop branch to main?
+
+   answer: git merge develop
+
+ 

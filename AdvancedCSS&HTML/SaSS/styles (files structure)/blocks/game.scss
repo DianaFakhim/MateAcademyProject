@@ -1,0 +1,51 @@
+// @use '../utils/mixins.scss';
+// @use '../utils/functions';
+// @use '../utils/variables' as *; //use this 'as *' syntax to not type references before each variables like- 'variables.cell-size'
+// @use '../utils/placeholders'; //placeholders extends dont need references  at all
+
+.game {
+  position: relative;
+  width: 3 * $cell-size;
+  border: 2px solid #000;
+
+  .game__field {
+    @extend %large-text;
+    display: flex;
+    flex-wrap: wrap;
+  }
+   &__cell {
+    box-sizing: border-box;
+    border: 1px dashed #000;
+    @include mixins.square($cell-size);
+  }
+   &__player {
+    position: absolute;
+    left: $base-shift;
+    top: $base-shift;
+    background-color: #000;
+    @include mixins.circle($player-size);
+
+    @for $index from 1 through $col-count {
+      &--col--#{$index} {
+        left: functions.getShift($base-shift, $cell-size, $index); 
+    }
+  }
+    @for $index from 1 through $row-count {
+      &--row--#{$index} {
+        top: functions.getShift($base-shift, $cell-size, $index);
+    }
+  }
+    $colors:
+      'red'  #f00,
+      'green' #0f0,
+      'blue' #00f;
+
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+

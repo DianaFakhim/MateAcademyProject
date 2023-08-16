@@ -1,0 +1,67 @@
+
+     /* #region Header */
+     .title {
+        padding: 20px 0;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        background-color: rgb(213, 210, 210);
+      }
+
+      .page {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: var(--theme-dark-color);
+        background-color: aliceblue;
+      
+      --section-border-color: #ced2ed;
+      
+      }
+
+      .page__content {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        
+      }
+
+      .page__main {
+        flex-grow: 1;
+      }
+    
+      .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 20px;
+        background-color: var(--theme-dark-color);
+        /* position: fixed;
+        top: 0; */
+      }
+       /* it is better to place outside styling separately for better reusage of block */
+      .page__header {
+        position: sticky;
+        /* position: fixed;
+        top: 0;
+        left: 0;
+        right: 0; */
+      }
+      
+      .page-header-logo {
+        display: inline-flex;
+        padding: 10px;
+        border: 1px solid black;
+        margin-right: 20px;
+      }
+      /* modifiers '--'*/
+      .header--theme_light {
+        background-color: rgb(74, 72, 72);
+      }
+      
+      .header--size_L {
+        height: 80px;
+      }
+      
+      /* #endregion */
+      

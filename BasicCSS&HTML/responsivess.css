@@ -1,0 +1,60 @@
+body {
+margin: 0;
+--header-height:50px;
+--footer-height:120px;
+}
+
+/* vh- viewPort height and vw-viewPortWidth will display 
+element regadless of parent size */
+.outer {
+    height: 100vh;
+    width: 100vw;
+    background-color: orange;
+}
+/* or if using percentages than you can set a size of child element 
+in percetages based on size of parent element */
+.inner {
+ height: 50%;
+ width: 60%;
+ background-color: green;
+}
+/* 
+careful when setting width for element! consider element marfins,padding etc. because it will all add up and mess up sizes. try box-sizing instead to set auto fit on page, box sizing will deduct first all paddings and border rest of the px will put into content itself 
+example below 10px for padding +10px for border and content height remaining out of fifty = 30px*/
+.hello {
+box-sizing: border-box;
+height: 50px;
+/* width: 50%; */
+padding: 5px;
+border: 5px solid white;
+margin: 0px;
+background-color: red;
+text-align: center;
+/* 
+setting margins and paddings in percent not going to work well because percentages are calculted from with of parent element even if you setting for margin-top 
+
+padding: 10%;
+margin:10% */
+}
+
+/* max-width and min-width will flex when screen gets smaller and will fit your content accoring to what is set for it */
+.content {
+ max-width: 500px;
+ width: 50%;
+ min-width: 300px;
+ margin: 0 auto;
+
+}
+/* css variables calculation example
+variable are usually set in body which is parent for elements so it can be used in
+ child element characteristics */
+.header{
+height: var(--header-height);
+}
+.footer{
+height: var(--footer-height);
+}
+.main{
+ line-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+

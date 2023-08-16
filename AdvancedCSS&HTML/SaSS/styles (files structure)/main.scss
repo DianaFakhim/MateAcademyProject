@@ -1,0 +1,20 @@
+@import './block/title.scss';
+@import './blocks/game.scss';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/placeholders';
+@import './utils/variables';
+
+//'@use' vs '@import'
+ 
+//when you add @import it in main file everything in refernced file will be applied globally
+//when you add @use you have to add each refernce in file where you're using it 
+
+// @use './block/title.scss';
+// @use './blocks/game.scss';
+
+// Sass basics https://sass-lang.com/guide
+
+//note that utils is better to include in files where we using then and not globally in project
+
+//this example of file structure, all styles explained in file 'style.scss'

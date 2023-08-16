@@ -1,0 +1,76 @@
+html {
+  height: 100%;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.header, .ads, .sidebar, .main, .news, .footer {
+  box-sizing: border-box;
+  padding: 1rem 0;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.header {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: calc(100% / 6); 
+  background-color: #253b4A;
+}
+
+.sidebar {
+  position: absolute;
+  top: calc(100% / 6);
+  left: 0;
+  height: calc(100% * 2 / 3);
+  width: 25%;
+  background-color: #ffbc00;
+}
+
+.ads {
+  position: absolute;
+  top: calc(100% / 6);
+  right: 0;
+  width: 75%;
+  height:calc(100% / 6);
+  background-color: #257d92;
+}
+
+.main {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  bottom: calc(100% / 6);
+  background-color: #ff530d;
+}
+
+.news {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% / 6);
+  width: 25%;
+  height: 50%;
+  background-color: #ffbc00;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% / 6);
+  background-color: #257d92;
+}

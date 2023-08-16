@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mate academy BEM</title>
+    <link rel="icon" href="mate_logo.png">
+    <link rel="stylesheet" href="styles/index.css">
+  </head>
+    <body class="page__content">
+      <header class="page-header page__header">
+        <a class="page-header-logo" href="/">
+          <img src="mate_logo" alt="logoMate">
+        </a> 
+        <!-- It is better to use classes for styling for most of the cases but for some it is better to use tags.
+             For example when we try to normalize styling for same section, body or for all elements.
+             Tags are also helpful for voice navigation for better usability use semantic tags-->
+        <nav class="nav">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="aboutPage.html">About</a>
+            </li>
+            <li>
+              <a class="nav__link" href="coursesPage.html">Courses</a>
+            </li>
+            <li>
+              <a class="nav__link" href="bemPage.html">BEM</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="page__main">
+        <h1 class="title">Mate academy</h1>
+
+        <section class="section page__section">
+          <h2 class="section__title">Our priorities</h2>
+          <div class="benefits">
+            <ul class="benefits__list">
+              <li>100% online</li>  
+              <li>20% theory 80% practice</li>
+              <li>Employed 800+ studens</li>
+              <li>Free english classes</li>
+          </ul>
+          </div>
+        </section>
+        <section class="section page__section">
+          <h2 class="section__title">School Schedule and Learning format</h2>
+          <div class="learning-formats">
+          <article class="learning-formats__format learning-format">
+            <h3 class="learning-format__title">Full-time schedule</h3>
+            <p>Employment without extra charges</p>
+            <ul class="learning-format__benefits">
+              <li>4 month from 9am to 6pm</li>
+              <li>Payment only after hiring. 17% from paystub</li>
+            </ul>
+          </article>
+           
+          <article class="learning-formats__format learning-format">
+            <h3 class="learning-format__title">Evening Schedule</h3>
+            <p>14 days learn for free, then monthly payments</p>
+
+            <ul class="learning-format__benefits">
+              <li>Free learning schedule</li>
+              <li>Monthly or full payments</li>
+            </ul>
+          </article>
+        </div>
+        </section>
+        <section class="section page__section">
+          <h2 class="section__title">School Schedule and Learning format</h2>
+          <div class="learning-formats">
+          <article class="learning-formats__format learning-format">
+            <h3 class="learning-format__title">Full-time schedule</h3>
+            <p>Employment without extra charges</p>
+            <ul class="learning-format__benefits">
+              <li>4 month from 9am to 6pm</li>
+              <li>Payment only after hiring. 17% from paystub</li>
+            </ul>
+          </article>
+           
+          <article class="learning-formats__format learning-format">
+            <h3 class="learning-format__title">Evening Schedule</h3>
+            <p>14 days learn for free, then monthly payments</p>
+
+            <ul class="learning-format__benefits">
+              <li>Free learning schedule</li>
+              <li>Monthly or full payments</li>
+            </ul>
+          </article>
+        </div>
+        </section>
+      </main>
+      <footer class="footer">
+       @ Copyright 2022, Mate academy
+      </footer>
+    </body>
+</html>

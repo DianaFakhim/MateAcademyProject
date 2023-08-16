@@ -1,0 +1,44 @@
+GIT basics
+In this lesson, you will learn what is GIT and its basic commands. To succeed with this topic, prepare your environment, by following the instructions below. If you have trouble with any part of the preparation, check the Troubleshooting section.
+
+Unix Terminal
+**To improve your expirience with Terminal, instal zsh extantions (Ubuntu, macOS):
+
+Install zsh:
+
+sudo apt-get install curl
+sudo apt-get install git
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+**Set-up the auto-suggestion and syntax highlighting in zsh:
+
+run in your terminal git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+run in your terminal git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+run in your terminal nano ~/.zshrc - file .zshrc opens in your terminal
+find the line plugins=(git) and paste git zsh-autosuggestions zsh-syntax-highlighting to it. It should look like:
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+press ctrl+x to exit from the file and y to approve the changes. Press Enter to close the file in your terminal.
+Install zsh and git autocompletion for Windows
+Follow this link to install Git for Windows.
+
+Note that Windows uses Git Bash as a part of the Git For Windows package.
+
+If you want to install zsh and its autocompletion in Windows Git Bash, follow the instructions in this link.
+
+**Add convenient formatting for git log
+Use open -t ~/.gitconfig command to open the git config file (start -t ~/.gitconfig for windows) and paste this alias:
+
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches 
+
+Enter the git lg command to check if you succeed
+
+Troubleshooting
+‘Can't create update lock. Fix permission by running…’
+message appears after running brew install zsh-completions If you see that message, you’re probably not the only computer user. Log in with your Admin account and paste install zsh-completions into Terminal again.
+
+
+
+
+
+

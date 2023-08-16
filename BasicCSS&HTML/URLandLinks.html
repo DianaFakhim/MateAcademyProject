@@ -1,0 +1,19 @@
+<!-- imaging we are on current page with address https://localhost:5500/basics/links/index.html
+    when navigating to following url's :
+
+    https://abc - absolute address will end at new address
+    //abc - will use same https protocol that is used in current page ,same absolute url https://abc
+    /abc - relative url, will open at the base of address (https:localhost:5500/abc)
+     abc - will open at last slash of current page example (https://localhost:5500/basics/links/abc)
+   ./abc - same as 'abc' will end up at last slash
+   ../abc - previous directory before last (example : https://localhost:5500/basics/abc)
+   ./../abc - same as ../abc
+   ../../abc - 2 directories prior so example - (https://localhost:5500/abc)
+   ../../../abc - more directories
+   ?query=apple&page=2 - uru search parameters like filters or more details
+   #news - hash for navigation inside of page
+
+   all this rules apply to command line and when connecting javascript files
+
+    
+    ----->

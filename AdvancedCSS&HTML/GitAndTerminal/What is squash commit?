@@ -1,0 +1,13 @@
+What is squash commit?
+ read more--> https://www.cloudbees.com/blog/git-squash-how-to-condense-your-commit-history
+
+The first one is to use the git merge command with the squash flag (two dashes there).
+
+'git merge --squash'
+
+And the second one is through an interactive rebase.
+
+'git rebase -i'
+
+The first option (merge) is very simple to perform. It’s clean and fast, but it gives you almost no control on what you want to do. Also, you will perform a merge—and that might not be what you want. The rebase option is usually considered to be the dangerous one, as you can lose commits or change everything in a way you didn’t intend. Despite this, it’s the one I prefer, and it gives you total control over the actions you need to perform.
+

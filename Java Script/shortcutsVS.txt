@@ -1,0 +1,2 @@
+ shortcuts in VS code
+  ** command + alt + F = select all same symbols or words and bulk edit

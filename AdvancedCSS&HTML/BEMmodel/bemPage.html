@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mate academy BEM</title>
+    <link rel="icon" href="mate_logo.png">
+    <link rel="stylesheet" href="styles/index.css">
+  </head>
+    <body class="page__content"> 
+      <!--  MODIFIER  'header--theme_light' -->
+      <header class="page-header header--theme_light header--size_L">
+        <a class="page-header-logo" href="/">
+          <img src="mate_logo.svg" alt="logoMate">
+        </a> 
+        <!-- It is better to use classes for styling for most of the cases but for some it is better to use tags.
+             For example when we try to normalize styling for same section, body or for all elements.
+             Tags are also helpful for voice navigation for better usability use semantic tags-->
+        <nav class="nav">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="/about.html">About</a>
+            </li>
+            <li>
+              <a class="nav__link" href="/courses.html">Courses</a>
+            </li>
+            <li>
+              <a class="nav__link" href="/bemPage.html">BEM</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="page__main">
+        <h1 class="title">What is BEM?</h1>
+
+        <section class="section page__section">
+          <h2 class="section__title">BEM - BLOCK ELEMENT MODIFIER</h2>
+          <p>
+            <strong>BEM</strong> - is web-development methodology that lies in dividing interface into separate parts (blocks).
+          </p>
+        </section>
+          <section class="section page__section">
+          <h2 class="section__title">What problems BEM solves?</h2>
+          <p>BEM simplifies code support in following:</p>
+          <ul class="bem-list">
+            <li>Making code easier to understand</li>  
+            <li>Helps avoid naming conflicts</li>
+            <li>Solves element specificity problem</li>
+            <li>Simplifies usability</li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        @ Copyright 2022, Mate academy
+       </footer>
+    </body>
+</html>

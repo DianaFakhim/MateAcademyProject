@@ -1,0 +1,28 @@
+.box {
+  border: 3px solid #000;
+  padding: 10px 20px;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 100px); /* will auto fill space with 100px boxes*/
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* size of card will be min 150px and taking space of 1 fraction fo the box 
+  this is very flexible and useful you dont need to use @media for smaller screens*/
+  grid-auto-flow: column; /* will determine where to place next element as column or row, row is default*/
+  grid-auto-rows: 150px; /* this is used when template columns or rows count is fixed not auto filled, this determine the size of unexpected cards in columns or rows */
+  gap: 1rem 10px;
+}
+
+.box__item {
+
+}
+
+.card {
+  width: 100px;
+  height: 150px;
+
+  box-sizing: border-box; 
+  border: 2px solid #000;
+
+  background-color: yellowgreen;
+
+  }

@@ -1,0 +1,19 @@
+.box {
+    width: 300px;
+    height:100px;
+    border:5px dashed blue;
+    padding: 10px;
+    overflow: scroll;
+    /* 'overflow:scroll'
+     will create a side bar to scroll for content that doesn't fit into and element.  */
+     /* overflow: hidden; will hide content that is over the element */
+     /* overflow: visible;
+     overflow-x: hidden; hide horizontaly
+     overflow-y: hidden; hide verticaly */
+
+}
+.content {
+    width: 400px;
+    height: 150px;
+    background-color: coral;
+}

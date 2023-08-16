@@ -1,0 +1,117 @@
+
+/* star(*) selector will apply style to all elements on page */
+* {
+    box-sizing: border-box;
+}
+/* by tag */
+p {
+    border: 1px solid black;
+}
+/* by class or multiple  classes and other tags */
+
+.someclass, h1, someotherclass {
+    background-color: #fff;
+}
+/* by id */
+#someID {
+    color: rgb(205, 210, 255);
+}
+/* by attribute */
+/* 
+[class] --all elementa with class attribute
+[class="page"] --element with 'page' class
+[class*="page"] --elements with class containing 'page' (pages,page-title etc._
+[class~="page"] --element containing word 'page' as page only 
+[class$="page"] -- ending with 'page'
+[class^="page"] --beggining with 'page'
+[class|="page"] -- will select whole word 'page' or as prefix page-title */
+[title] {
+    font-size: 16px;
+}
+
+/* on practice it is better to use classes for styling the element,
+ and sometimes tags for normalization of default browser styiling */
+
+ /* Normalize default browser
+
+ Normalize. css is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements. It's a modern, HTML5-ready, alternative to the traditional CSS reset." This component is a direct port of Normalize v1. 1.0 from the Normalize. 
+ 
+ you can paste this https://necolas.github.io/normalize.css/8.0.1/normalize.css into your html
+ before your style sheets to use it
+ */
+
+ /* Or use Reset.css to reset default browser styles to 0 , copy the code and paste before your style sheet*/
+
+ /* or you might want to add margins, padding, font-style etc. in  body that will apply to page  */
+
+
+
+/* in this case we reset all default browser styles to either initial or inherited(means that will inherit from parent element) , 
+    but initial default value for display is 'inline' that is why we have to revert 'display' , but 'revert' is not supported by many browser so that option might not work. 
+    on practice it is common to use .css libraries like normilize or reset
+    check out 'can i use..?' website */
+
+ * {
+    all: unset;  /* inherit, initial */
+    display:revert;
+    box-sizing: border-box;
+ }
+
+ /* can be used like that as well , go to doc MDN to check initial and inherited  */
+ h1{
+    font-weight: initial;
+    font-size: inherit;
+ }
+
+ /* HOW TO COMBINE SELECTORS */
+  
+  /* will apply styles to all elelment with class 'container' and 'block' */
+ .container, .block {
+   color: blueviolet;
+   border: black;
+ }
+  
+   /* will apply styles to elements with class 'container' and child elements with class 'block' within the container */
+ .container .block {
+    color: blueviolet;
+    border: black;
+ }
+
+   /* will apply styles to elements with class 'container' and first generation child elements
+   (not grandchildren) with class 'block' within the container */
+   .container > .block {
+    color: blueviolet;
+    border: black;
+ }
+
+    /* will apply styles to elements with class 'container' and only first next sibling with class 'block' */
+   .container + .block {
+    color: blueviolet;
+    border: black;
+ }
+
+   /* will apply styles to elements with class 'container' and to all next siblings with class 'block' */
+    .container ~ .block {
+     color: blueviolet;
+     border: black;
+ }
+
+    /* NO space will apply styles to elements with both classes 'container' class 'block' 
+    class="container block"  can be with attributes, or semantic tags ex. section.class (section tag with attribute 'class'*/
+    .container.block {
+    color: blueviolet;
+    border: black;
+    }
+  /* container > * {  applies to all child elements of class container */
+  /* container + * {  applies to any next element after class container */
+  /* container ~ * {  applies to all element after class container */
+  /* container > * > * {  applies to all grand child element within class container */
+  /* container > * > div.block {  applies to all grand child div elements with class 'block' within container */
+  
+
+
+
+
+
+ 
+ 

@@ -1,0 +1,16 @@
+// @use '../utils/placeholders';
+
+.title {
+  @extend %large-text; //placeholder
+  padding: 0;
+  
+  //@media example in scss
+  @media (min-width: 300px) {
+    background-color: yellow;
+ }
+  @media (min-width: 500px) {
+    background-color: yellowgreen;
+ }
+
+}
+

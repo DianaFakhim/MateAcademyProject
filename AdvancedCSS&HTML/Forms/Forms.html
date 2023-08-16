@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search away!</title>
+        <link rel="icon" href="awesomeStamp.png">
+        <!--read style from styling page-->
+        <link rel="stylesheet" href="FormsStyle.css">
+    </head>
+    <body>
+        <h1>Awesome Search</h1>
+
+        <!--simple search box form example  
+        there's 2 methods GET & POST  to use when passing data to server-->
+        <form action="https://localhost:3000/api" method="post">
+        <!--search field itself-->
+         <div class="form-field">
+            X:
+            <input type="text" name="x" placeholder="example of value to add">
+         </div>
+         <div class="form-field">
+            Y:
+            <input type="text" name="y" value="123" readonly> <!--'readonly' will not let to edit, 'disable' won't send value to a server at all -->
+         </div>
+         <div class="form-field">
+            Z:
+            <input type="text" name="z">
+         </div>
+
+         <button>Search</button>
+
+         <h2>Password and Username example</h2>
+
+          <!--'email' type will force email validation to be valid email address-->
+
+          <!--tabindex attribute will focus first on that field when mavigated to a page-->
+         <div class="form-field">
+            Username:
+            <input class="field" type="email" name="username" placeholder="Email" tabindex="1" required> 
+           </div>
+    
+         <!--Password form field
+        using POST method only for security using type 'password' to hide psw characters
+    use 'required' attribute-->
+         <div class="form-field">
+          Password:
+          <input class="field" type="password" name="password"
+           minlength="8" maxlength="100" pattern="/w+" required> <!--validations usually performed ny javascipts so to skip standard html validation add attribute 'novalidation' to avoid unnecessery erroros-->
+         </div>
+
+         <!--'remember me' checkbox for password-->
+         <div class="form-field">
+            <input class="field" type="checkbox" name="remember" id="remember-me">  <!-- add 'checked' if you want checkbox to be selected by default
+            Label will allow user to select checkbox by clicking anywhere on that text fiels and not only checkbox-->
+            <label class="form-label" for="remember-me">
+            Remember me
+         </label>
+         </div>
+       
+        <!-- <button>Sign in</button> -->
+
+        <!--Theres 3 types of buttons 'reset'- clears the form, 'submit'-send requests, 'button'-wont send request to a server it is usually used to close pop ups,open up a new pop up etc.-->
+         <button class="form-button" type="reset">Reset</button>
+         <button class="form-button" type="submit" disabled>Sign in</button>
+         <button class="form-button" type="button">Button</button>
+
+
+         <!--Radio button similar to checkbox-->
+         <div class="optselect">
+         <label>
+         <input type="radio" name="option1" value="option1">option1
+      </label>
+      <label>
+         <input type="radio" name="option2" value="option2">option2
+      </label>
+      </div>
+
+      <!--Select from list-->
+      Select a color:
+      <label class="list">
+      <select name="color"  id="list" required multiple>
+         <option value="" disabled selected>Choose color</option>
+         <option value="#f00">Red</option>
+         <option value="#0f0">Green</option>
+         <option value="#00f">Blue</option>
+      </select>
+   </label>
+
+    <label class="form-field">
+      Add your comments:
+<!--TEXT AREA TAG-->
+   <textarea
+     name="comments"
+     placeholder="50 characters minimum"
+     rows="5"
+     cols="30"
+   ></textarea>
+</label>
+
+<!--CONTENTEDITABLE SIMILAR TO TEXT AREA BUT EASIER TO STYLE
+but you cant make it required field or disabled-->
+<div contenteditable>Add Some text</div>
+
+
+<!--HIDDEN input type making input field not visible to a user 
+   but still sending data to server
+
+<input type="hidden" name="role" value="admin">
+
+MORE input types can be found here : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+example: 
+<input type="number" name="somenumbers">
+<input type="tel" name="phone" pattern="[0-9]{3}-{0-9}{4}">
+
+-->
+
+        </form>
+    </body>
+</html>

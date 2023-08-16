@@ -1,0 +1,56 @@
+/* #region Section */
+.section {
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid aliceblue;
+    border-radius: 16px;
+
+    --page-section-gap: 24px;
+  
+  }
+  
+  .section__title {
+    margin: 0 0 16px;
+  }
+  
+  .benefits {
+    margin: 0;
+  }
+  
+  /* variables helps to avoid unnessesery changes */
+  .page__section {
+    margin: var(--page-section-gap);
+  }
+  
+  .learning-format {
+    background-color: rgb(212, 209, 209);
+  }
+  
+  .learning-format__title {
+    margin: 0;
+  }
+  
+  .learning-format__benefits {
+    margin: 0;
+  }
+  
+  
+  /* 
+  .learning-formats__format {
+    margin-bottom: 50px;
+  } 
+  
+  .learning-formats:last-child {
+    margin-bottom: 0;
+  } 
+   it is better to use display flex and gap then setting margings for each element on one side
+  --->
+  */
+  .learning-formats {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  /* #endregion */
+  

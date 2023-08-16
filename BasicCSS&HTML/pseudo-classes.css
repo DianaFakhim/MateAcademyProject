@@ -1,0 +1,40 @@
+/* will highligt element when hovering over it  */
+
+li:hover {
+    background-color: aqua;
+}
+/* will apply to  child element*/
+/* li:last-child */
+/* li:nth-child(4) */
+/* li:nth-child(n+3) starting from 3rd element */
+li:first-child {
+    background-color: aqua;
+}
+
+/* select first element of type h2. will select only first element with tag h2 */
+/* .container h2:last-of-type */
+/* .container h2:nth-of-type(2)   by index*/
+.container h2:first-of-type {
+    text-align: center;
+}
+
+/* select elements that are not with tag <p class="info"> */
+/* select elements that with class 'info' but not <p> */
+.container :not(p).info{
+    text-align: center;
+}
+
+/* .box::first-line  */
+/* select 1st letter */
+.box::first-letter {
+    color: brown;
+}
+/* style element that is before or after  */
+/* .box::after  */
+.box::before{
+    background-color: brown;
+}
+/* element changing color when selecting */
+.box::selection {
+    background-color: blue;
+}

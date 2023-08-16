@@ -1,0 +1,49 @@
+/*
+
+
+Media queries are rules you can use to change the style of elements depending on the device on which you view your webpage.
+
+Media queries are used to display the same webpage on a smartphone or large screen differently to be convenient for the user. Such a type of design is called adaptive.
+
+To set a media query, use the following CSS structure: */
+
+@media [type] ([condition]) {
+  /* Your styles! */
+}
+
+ /*  Where:
+
+type of your device. Can be screen, print, speech, or all;
+condition after which new styles will apply. For example, min-width, orientation, or resolution. */
+
+@media all (min-width: 768px) {
+  .row {
+    flex-direction: row;
+  }
+}
+
+/*  To display webpages conveniently on different devices (cell phones, tablets), you need to render them correctly on a viewport. Viewport is the area of the window in which web content can be seen. Often it does not have the same size as the webpage, and then a browser provides scrollbars to scroll around and access all the content.
+
+Use the viewport meta tag to optimize your page display scale: */
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+/* Where:
+
+width controls the size of the viewport. The device-width value is 100% of the viewport width;
+initial-scale controls the zoom level when the page is first loaded.
+Check the videos and the Useful Links for this lesson to see how to use media queries and viewport in more detail.
+
+https://css-tricks.com/a-complete-guide-to-css-media-queries/
+
+https://www.w3schools.com/tags/tag_picture.asp
+
+use media in html as picture tag
+
+<picture>
+  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+  
+*/

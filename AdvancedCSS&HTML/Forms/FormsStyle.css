@@ -1,0 +1,31 @@
+.form-field {
+    display:block;
+    margin: 10px 0;
+}
+
+.field::placeholder {
+    color:blueviolet
+}
+
+.field:invalid {
+    border: 1px solid red;
+}
+
+.field:focus {
+    background-color: yellow;
+}
+
+.field:checked ~ .form-label {
+    color: green
+}
+.form-button:disabled {
+    opacity: 0.8;
+}
+.optselect {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.list {
+    display: block;
+}

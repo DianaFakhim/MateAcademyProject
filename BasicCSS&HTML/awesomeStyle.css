@@ -1,0 +1,88 @@
+html {
+    font-size: 20px;
+    background-color: #fff;
+    color: darkred;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+body {
+
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     margin: 0;
+}
+
+main {
+   height: 100vh;
+   width:100vw;
+   background-image: url(awesomeStamp.png);
+   background-repeat: repeat;
+   background-size: 200px;
+   background-position: center;
+
+}
+
+p {
+    border: white solid 2px;
+    border-radius: 10px;
+    background-color: rgb(221, 172, 155);
+    padding: 10px 10px;
+    margin-right: 650px;
+
+}
+
+.title {
+    font-size: 3rem;
+    /* margin: 0.5em 200px; */
+    margin-top: 0;
+    text-align: center;
+    border: solid darkred 2px;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background-color: rgb(221, 172, 155);
+    text-shadow: 1px 1px 2px red, 0 0 1em rgb(102, 50, 20), 0 0 0.2em rgb(78, 21, 5);
+    /* text and box shadow examples :
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow#examples */
+}
+
+img {
+    height: 250px;
+    width: 500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border: solid red 2px;
+    object-position: center;
+    object-fit: contain;
+    background-color: #fff;
+    /* float: left; image will be inside the text and fit "текст обтекает картинку"*/
+    /* clear:right; will erase float for image  "стирает обтикание пред елемента"*/
+}
+
+.list {
+    border: white solid 2px;
+    border-radius: 10px;
+    background-color: rgb(221, 172, 155);
+    padding: 10px 10px;
+    margin-right: 650px;
+
+}
+.link__ {
+font-size: 30px;
+font-weight: bold;
+color: black;
+margin-right: 650px;
+text-decoration: none;
+
+}
+
+.link:hover {
+font-size: 30px;
+font-weight: bold;
+border: solid chocolate 2px;
+border-radius: 10px;
+background-color: chocolate;
+margin-right: 600px;
+text-decoration: none;
+
+}

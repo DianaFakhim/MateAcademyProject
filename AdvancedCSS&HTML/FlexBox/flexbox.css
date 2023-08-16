@@ -1,0 +1,54 @@
+/* display: flex - will erase spaces between element and fit them in container dividing paddings/margind evenly.
+also margins will collaps (overflow) unlike the inline display that will add margins together. */
+
+
+.container {
+  border: 3px solid red;
+  display: flex;
+  flex-direction: column;    /* row, row-reverse, */
+  flex-wrap: wrap; /* if content doesnt fix into container then use flex-wrap */
+  justify-content: flex-start; /* elements will flex to end if column. if rows then to top*/
+  align-items: baseline; /* this will align elements in container(выравнивание елементов в поперек их оси) 'baseline' value in this case baseline will align element based on first elements line position (it wont work for column) , there also - stretch, start, end, center and more*/
+  align-content: center; /*this will aligned content that way so elements will shrink to size of biggest element and adjust space evenly in between(unlike justify-content) */
+
+  /* justify-content - alight content horizontally
+     align-content - alight content vertically
+     
+     justify-items - alight items inside of the content horizontally
+     align-items - alight items inside of the content vertically * /
+
+}
+
+.box {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 3px solid blue;
+  background-color: yellow;
+  align-self: flex-start; /* just like align-items but for one particular element */
+  flex-grow: 1; /* this will strech element in proportions as in this example value is 1 and element next to is 2 so available space in container will divide according to proportions*/ 
+  flex-basis: 40px; /* instead of fixed width or height its easier to use this so it rotate depending on if its columns or rows*/
+  flex-shrink: 1; /* similar to flex-grow, but instead it will shrink the elements and not stetch them, if element doesn't have min-width or min-height
+  set so then it will shink to longest word or element with most charchters in it */
+  
+}
+
+.box-2 {
+  order: -1; /* if we  want to put this element first then we have to -1 and not 1 , since element starts wiyh 0 */
+  flex-grow: 2;
+}
+
+
+/* how to center element (besides display flex) using position and top, transport (but better to use display flex, alight-content etc.)
+or also better better to use justify-content:center; along with flex display*/
+.box-3 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); /*half of container that will help to keep the center and not depending on content size*/
+  height: 80 px;
+  width: 300px;
+  background-color: green;
+
+}
+
+/* Complete guide to flexbox 
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */

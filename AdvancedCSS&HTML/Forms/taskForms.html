@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML Form</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1 class="header">HTML Form</h1>
+  <script type="text/javascript" src="./main.js"></script>
+  <form action="https://mate-academy-form-lesson.herokuapp.com/create-application" method="post">
+
+    <div class="form-field">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label class="form-label" for="surnametextfield">
+          Surname:
+        </label>
+        <input class="field-lastname" type="text" name="surname" id="surnametextfield" autocomplete="off" required> <br>
+        <label class="form-label" for="nametextfield">
+          Name:
+        </label>
+        <input class="field-name" type="text" name="name" id="nametextfield" autocomplete="off" required> <br>
+        <label class="form-label" for="agetextfield">
+          How Old are You?
+        </label>
+        <input class="field-age" type="number" name="age" id="agetextfield" autocomplete="off" minlength="1" value="12"
+          required> <br>
+        <label class="form-label" for="dobfield">
+          Full date of birth:
+        </label>
+        <input class="field-date" type="date" name="dateofbirth" id="dobfield" autocomplete="off" required> <br>
+        <label class="form-label" for="term-agreement">
+          I accept the term of agreement
+        </label>
+        <input class="field-checkbox" type="checkbox" name="terms" id="term-agreement" required>
+      </fieldset>
+    </div>
+
+    <div class="form-field">
+      <fieldset>
+        <legend>Registration</legend>
+        <label class="form-label" for="emailtextfield">
+          Email:
+        </label>
+        <input class="field-email" type="email" name="email" id="emailtextfield" placeholder="example@email.com"
+          required> <br>
+        <label class="form-label" for="passwordtextfield">
+          Password:
+        </label>
+        <input class="field-password" type="password" name="password" id="passwordtextfield" minlength="8"
+          maxlength="100" required>
+      </fieldset>
+    </div>
+
+    <div class="form-field">
+      <fieldset>
+        <legend>An interesting fact about you?</legend>
+        <label class="form-label">Do you love cats?</label>
+        <input class="field-radio" type="radio" name="yes" value="Yes" id="yesbutton">
+        <label class="form-label" for="yesbutton">
+          Yes
+        </label>
+        <input class="field-radio" type="radio" name="no" value="No" id="nobutton">
+        <label class="form-label" for="nobutton">
+          No
+        </label> <br>
+        <label class="form-label" for="link">What is your favorite color?</label>
+        <select class="colors-dropdown" name="color" id="colorslist">
+          <option class="red" value="#f00">red</option>
+          <option class="blue" value="#2d3291">blue</option>
+          <option class="green" value="#029b33">green</option>
+          <option class="yellow" value="#f7e602">yellow</option>
+        </select> <br>
+        <label class="form-label">What time you go to bed?</label>
+        <input class="field-time" type="time" name="time" id="timefield"> <br>
+        <label class="form-label" for="carslist">What is your favorite brand of cars?</label>
+        <select class="carsdropdown" name="cars" id="carslist">
+          <option value="bmw">BMW</option>
+          <option value="audi">Audi</option>
+          <option value="mercedes">Mercedes</option>
+        </select> <br>
+        <label class="form-label"> How do you rate our work?</label>
+        <input class="field-range" type="range" name="rate-range">
+      </fieldset>
+    </div>
+
+    <div class="form-field">
+      <fieldset>
+        <legend>Additional info</legend>
+        <label class="form-label">Comments:</label>
+        <textarea class="field-comments" name="comments" placeholder="max 100 characters" maxlength="100" cols="50"
+          rows="3"></textarea> <br>
+        <label class="form-label">Would you recommend us?</label>
+        <select class="recommenddropdown" name="recommended">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </fieldset>
+      <div class="form-field">
+        <button type="submit" name="submitbtn">Submit</button>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

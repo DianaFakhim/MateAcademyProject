@@ -1,0 +1,110 @@
+/*TRANSITION*/
+
+.box {
+  width: 150px;
+  height: 70px;
+  margin: 50px;
+  background-color: #080;
+  cursor: pointer;
+  /* transition-duration: 0.5s; --determines how smooth transition will happen
+  transition-property: width; --determine which property of element will transition specifically
+  transition-delay: 1s; --when transition happens (after hovering element for example)
+  transition-timing-function: ease; -- this is complicated read here https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function 
+  https://cubic-bezier.com/#.17,.67,.83,.67 -->read more about transition
+  
+  */
+  transition: width 0.5s ease 1s; /* all properties above can be sprecified in one line */
+}
+
+/* Transitions are working only with 'block' or 'inline-block' elements. they dont work with properties like 'cursor' but work with stable properties like width, height, transperency etc.  */
+
+.box:hover {
+  transition: width 1s ease;  /* you can add transition here and it will be different for element when you hovering over it */
+  width: 400px;
+  background-color: #040;
+}
+
+/*ANIMATION*/
+
+.box2 {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 50px;
+  background-color: #080;
+    /* 
+  animation-name: move;
+  animation-duration: 1s; /* for how long animation lasts
+  animation-timing-function: linear; 
+  animation-iteration-count: 3; /* how many times animation move happens
+  animation-direction: alternate; /*can be 'backwards' 'forwards' 
+  animation-delay: 2s;
+  animation-fill-mode: backwards; what position of element will be when it stops . backwards means the box will stop at its initial position (i think , or opposite) 
+  */
+  animation: 
+  move 1s linear 2 alternate,
+  round 1.5s linear infinite;  /* all above properties in one line */
+
+  
+}
+
+.box2:hover {
+  animation-play-state:paused ;  /*will pause on hovering the element */
+}
+
+ /* '@keyframes' is keyword to use when trying to animate the element
+ you have to specify in element properties name of keyframe so it will be applied */
+@keyframes move {
+  from {
+    left: 0;
+  }
+  to {
+    left: 400px;
+  }
+}
+/* can be used in percetages to change the state of element in middle of animation*/
+@keyframes round {
+  0% {
+    border-radius: 0;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0;
+  }
+}
+
+/* TRANSFORM*/
+
+.container {
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  border: 2px solid #000;
+  perspective: 400px; /*this property is needed when you using translate3D to know what is the visual distance between object and screen*/
+  transform-origin: top right; /* this property will determine from what side transform will happen , for example rotation will start from upper right corner in this case*/
+}
+
+.box3 {
+  height: 100%;
+  background-color: #080;
+  transition: transform 350ms;
+}
+
+.box3:hover {
+  transform: tranlate3D(10px, 60, -100px);
+  /* translate(10px, 60px);-->  will move box3 out of the container 10 px lower 60 px to right
+  translateY-->vertical shift, translateX-horizontal shift
+  tranlateZ(10px, 60, -100px)--same as translate3D   
+  transform: rotate(30deg); --> will rotate the element (rotateX, rotateY)  
+  transform: scale(2); --> will enlarge the element 2 times , scale(0.5, 1.5)-->getting smaller horizontaly 0.5, getting larger vertically 1.5
+  transform: skew(30deg) --> angle of deformation  example skew(30deg, 15deg); can be used with with translate together
+  example : transform: skew(30deg, 15deg) translate(10px, 60px);
+
+  translateX(50%); --> can be used in percentage in this case element transition will happen 50% from size of element and not its parent, unlike 'animation' or 'transition' if set in percentages then it will calculate from parent size not child element
+   */
+
+
+}
+

@@ -1,0 +1,96 @@
+String
+This cheat sheet will help you to learn string methods
+
+// single quotes
+const str = 'Abcde';
+
+// backticks
+const html = `
+  <button>Click me</button>
+  <p>${ str }<p>
+`;
+charAt returns a character at a given index or ''
+
+console.log(
+  'Abcde'.length === 5,
+  'Abcde'[0] === 'A',
+  'Abcde'.charAt(20) === '', 
+  'Abcde'[20] === undefined, 
+);
+
+// str[2] = '0'; // An error, you can modify a string
+str.includes(part) returns true if the str contains the part.
+
+str.indexOf(part) returns an index of the first occurrence of the part inside str or -1.
+
+str.lastIndexOf(part) returns an index of the last occurrence of the part inside str or -1.
+
+str.startsWith(part) returns true if the str starts with the part.
+
+str.endsWith(part) returns true/false if the str ends with the part.
+
+str1.localeCompare(str2) returns:
+
+-1 if the str1 occurres earlier than the str2 in a dictionary;
+1 if the str1 occurres later than the str2 in a dictionary;
+0 if the strings are equal.
+console.log(
+ 'Abcde'.includes('bc') === true,     // contains anywhere
+ 'Abcde'.includes('bc', 2) === false, // contains starting from index 2
+
+ 'Abcde'.indexOf('bc') === 1,         // an index of the first occurrens
+ 'Abcde'.indexOf('bc', 2) === -1,     // the first occurrens after index 2
+
+ 'Abcde'.lastIndexOf('bc') === 1,     // an index of the last occurrens
+
+ 'Abcde'.startsWith('Ab') === true,   // starts with the `Ab`
+ 'Abcde'.endsWith('de') === true,     // ends with the `de`
+
+ 'Abcde'.localeCompare('aaa') === 1,  // goes after in the dicrionary
+);
+str.slice(from, to) returns a part of a string.
+
+console.log(
+  'Abcde'.slice(1, 3) === 'bc',   // 1st and 2nd characters
+  'Abcde'.slice() === 'Abcde',    // a full copy
+  'Abcde'.slice(-3, -1) === 'cd', // negative index are taken from the end
+  'Abcde'.slice(-2) === 'de',     // the last 2 characters
+);
+str.replace(part, replacement) returns a string with replaced parts.
+
+console.log(
+  'Abababab'.replace('ab', '12') === 'Ab12abab', // only 1 replace
+  'Abababab'.replace(/ab/i, '12') === '12ababab', // use RegExp for case insensitive replace
+  'Abababab'.replace(/ab/g, '12') === 'Ab121212', // use RegExp to replace all occurrences
+  'Abababab'.replace(/ab/ig, '12') === '12121212', // replace all occurrences ignoring the case
+);
+str.toUpperCase() returns a string with capital letters
+
+str.toLowerCase() returns a string with small letters
+
+str.trim() returns a string without spaces at the start and at the end
+
+str.trimStart() returns a string without spaces at the start (alias for trimLeft)
+
+str.trimEnd() returns a string without spaces at the end (alias for trimRight)
+
+console.log(
+  'Abcde'.toUpperCase() === 'ABCDE', 
+  'Abcde'.toLowerCase() === 'abcde',   
+  ' \t a\n '.trim() === 'a',
+  ' \t a\n '.trimStart() === 'a\n ',
+  ' \t a\n '.trimEnd() === ' \t a',
+);
+str.repeat(times) returns a string repeated several times.
+
+console.log(
+  'az'.repeat(3) // 'azazaz',
+);
+str.padStart(length, replacement) returns a string of the given length with the replacement added at the beginning as many times as it is required.
+
+str.padEnd(length, replacement) returns a string of the given length with the replacement added at the beginning as many times as it is required.
+
+console.log(
+  '4567'.padStart(10, '*') === '******4567',
+  '4567'.padEnd(10, '*') === '4567******',
+);

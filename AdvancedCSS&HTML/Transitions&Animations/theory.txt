@@ -1,0 +1,115 @@
+Transitions, Animations, and Transformations
+In this lesson, you will learn how to change elements styles smoothly.
+
+Transition
+By default, all the CSS changes are applied immediately. So if you change the height of the element on hover, it will "jump". Transition properties allow you to make this change smooth. For example:
+
+.box {
+  height: 100px;
+  background-color: #f00;
+  transition: height 1s;
+}
+
+.box:hover {
+  height: 200px;
+}
+
+To set a transition, you can use the following properties:
+
+transition is the shorthand for the transition-property transition-duration transition-timing-function transition-delay;
+transition-property sets properties that will change smoothly;
+transition-duration sets the time the transition takes to finish;
+transition-timing-function sets the smoothness of the transition;
+transition-delay sets the time to wait before the transition starts.
+For example:
+
+.box {
+  transition: height 4s ease-in-out 1s;
+  
+  /* is the same as */
+  
+  transition-property: height;
+  transition-duration: 4s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 1s;
+}
+
+Animation
+Animations allow you to change CSS styles smoothly, but in contrast to transitions, they allow you to have more than 2 states (the initial and the final) and repeat them several times without any user actions.
+
+To create an animation, use the @keyframes with from (0%), to (100%), and optionally one or more intermediate (for example, 50%) offsets:
+
+@keyframes move {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  50% {
+    top: 10px;
+    left: 10px;
+  }
+
+  100% {
+    top: 50px;
+    left: 50px;
+  }
+}
+
+Please note: in this example, move is your animation name, which you need to provide in the animation-name property.
+
+The main animation properties are:
+
+animation is the shorthand property for the animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction animation-fill-mode animation-name;
+animation-duration sets the time the animation takes to complete;
+animation-timing-function sets how the animation progresses through the duration of each cycle;
+animation-delay sets the time to wait before the animation;
+animation-iteration-count sets how many times the animation will be executed;
+animation-direction sets whether the animation executes forward, backward, etc.;
+animation-fill-mode sets how the animation applies styles to its target before and after its execution;
+animation-name sets the animation name provided in the @keyframes.
+For example:
+
+.box {
+  animation: 5s ease 2s 3 reverse move;
+  
+  /* is the same as */ 
+  
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-delay: 2s;
+  animation-iteration-count: 3;
+  animation-direction: reverse;
+  animation-name: move;
+}
+
+Please note: not all CSS properties can use transitions and animations. To check if a property can transit and animate, see Animatable CSS properties.
+
+Transformation
+Transformations allow you to rotate, scale, skew, or translate elements.
+
+The main transformation functions are:
+
+translate(left, top) shifts the element by specified distances from its initial position;
+rotate(angle) rotates the element clockwise by the given angle;
+scale(times) increases or decreases the element by the specified number of times;
+skew(angle) skews the element by the given angle (or angles).
+For example:
+
+.box {
+  transform: translate(50px, 50px);
+  transform: rotate(180deg);
+  transform: scale(2);
+  transform: skew(25deg);
+}
+
+Cheat sheet what can you use in different browsers :
+https://caniuse.com/
+
+
+Tag !important;
+example,
+ display: !important; 
+
+ this will ignore any future settings for display that is applied. this is not recommended to usee only when testing or during the implementation
+

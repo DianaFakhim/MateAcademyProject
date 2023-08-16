@@ -1,0 +1,69 @@
+How to use terminal
+How to build a path
+Prefix	Description
+/	root folder (MacOS)
+C:/, D:/	Disk root (Windows)
+~	User home folder
+.	Current folder
+..	Parent folder
+../..	2 level up folder
+*	Any path
+img/*.png	all the png files in img folder
+Useful commands
+Command	Description
+pwd	show current location
+ls	show current folder content
+ls ~	show the content of user's home folder
+ls path	show the content of a folder specified with path
+ls -la	list all files (including hidden as a table
+cd path	go to specified path
+mkdir dirName	create a folder dirName
+mkdir dir1 dir2	create folders dir1 and dir2
+mkdir -p dir1/dir2	create folders dir1 and dir2 inside dir1
+touch file-name	create a file file-name
+touch path/file-name	Create a file file-name inside an existent folder specified by path
+rm file1	delete a file file1
+rm -r path	delete path with all its content
+rm -r path/*	delete everything inside path folder but not the folder itself
+mv source destination	rename source file or folder to destination
+mv source path/	move source file or folder into path
+cat path/to/file	show file content
+head -n 5 file	show 5 first lines of the file
+tail -f file	show 10 last line of the file and wait for updates
+grep pattern file	find all pattern matches in the file
+less file	show file content with a convenient navigation
+open -t file	open the file in the default text editor
+man command	show the doc about command
+which command	show command location
+some-command > file1	write the some-command output to the file1
+command1 | command2	send the command1 output to command2
+alias	show all the aliases
+alias name='command'	create a name alias for the command
+unalias name	remove the name alias
+echo 'Some text'	print a text
+echo $PATH	print a PATH variable
+env	show global variables
+X=new_value	set new_value to a X variable
+X=value command	set new_value to a X variable for a single run of a command
+export VAR=new_value	set globally new_value to a VAR variable
+Commands history
+Command	Description
+history	show last commands
+!10	a command number 10 from the history
+!pattern	the latest command starting with pattern
+!!	the last command from the history
+Arrow UP	show prev command
+Arrow DOWN	show next command
+CTRL + R	search in commands history
+Useful less shortcuts
+Shortcut	Description
+:q	Quit file
+:h	Help
+f	Forward (1 page)
+b	Backward (1 page)
+d	Down (0.5 page)
+u	Up (0.5 page)
+shift + g	Go to the end of the file
+g	Go to the beginning of the file
+/pattern	Search for a pattern starting from top
+?pattern	Search for a pattern starting from bottom

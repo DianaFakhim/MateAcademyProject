@@ -1,0 +1,22 @@
+/* #region Footer */
+.footer {
+    /*   
+      its not a good practice to use set sizes for whole blocks like 'height'
+      as contect size can change, in this case we are using border-box , 
+      so height will be 150px in total and not more when there's paddings  */
+    
+      /* height: 100px; */
+      box-sizing: border-box; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      min-height: 150px;
+      padding: 60px;
+    
+      text-align: center;
+      color: #ced2ed;
+      background-color: var(--theme-dark-color);
+    }
+    
+    /* #endregion */

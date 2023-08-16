@@ -1,0 +1,49 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+section {
+    height: 300px;
+    border: 2px solid blue;
+    padding: 0 5px;
+    margin: 10px 0;
+    background-color: bisque;
+}
+
+
+/* style anchor element, in this case when navigating to element it will change color */
+section:target {
+    background-color: aqua;
+
+}
+/* 
+make sure to style link in that order
+link-->:visited-->hover-->active */
+
+
+a:link {
+    padding:  5 px 10px;
+    margin: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+
+}
+
+/* will remove default browser color of links visit to what is set in this phsedo class
+you cannot change padding or margins for security purpose  so it is styled with ' :link ' phsedo class example above*/
+a:visited {
+    color: red;
+    background-color: black;
+}
+
+a:hover {
+    color: brown;
+    background-color: orange;
+    
+}
+
+a:active {
+    color:grey;
+    background-color: yellow;
+}
